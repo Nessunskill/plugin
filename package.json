@@ -1,0 +1,31 @@
+{
+  "name": "@brizy/contentful",
+  "version": "1.0.0",
+  "description": "Contentful plugin",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "lint": "eslint \"src/**/!(*.d).ts*\"",
+    "tsc": "tsc --noEmit",
+    "prettier-check": "prettier --check \"src/**.{ts,tsx}\"",
+    "dev": "npm run clean && npm run build:types && webpack --watch",
+    "build": "npm run clean && webpack --mode production && npm run build:types",
+    "build:types": "tsc --emitDeclarationOnly",
+    "clean": "rimraf dist",
+    "clean:modules": "find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \\;",
+    "reinstall": "npm run clean:modules && npm install"
+  },
+  "devDependencies": {
+    "path-browserify": "^1.0.1",
+    "rimraf": "^5.0.1",
+    "util": "^0.12.5",
+    "webpack": "^5.88.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "files": [
+    "dist",
+    "package.json"
+  ]
+}
