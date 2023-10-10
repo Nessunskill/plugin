@@ -1,6 +1,6 @@
 {
   "name": "brizy-plugin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "brizy-plugin",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -32,6 +32,7 @@
     "brizy-plugin": "bin/install.mjs"
   },
   "dependencies": {
+    "inquirer": "^9.2.11",
     "ora": "^7.0.1"
   }
 }

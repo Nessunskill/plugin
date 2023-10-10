@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { promisify } from "util";
 import cp from "child_process";
+const inquirer = require('inquirer');
 import path from "path";
 import fs, { existsSync, mkdirSync } from "fs";
 // cli spinners
@@ -33,6 +34,30 @@ else {
 }
 
 try {
+    inquirer
+        .prompt([
+            {
+                type: 'list',
+                name: 'language',
+                message: 'Выберите язык для вашего проекта:',
+                choices: ['JavaScript', 'TypeScript'],
+            },
+            // Другие вопросы и опции, которые вас интересуют
+        ])
+        .then((answers) => {
+            // Обработка ответов пользователя
+            const { language } = answers;
+            console.log(`Вы выбрали язык: ${language}`);
+
+            // Здесь можно выполнить настройку проекта на основе ответов пользователя,
+            // например, скопировать соответствующий шаблон проекта
+
+            // После этого можно выполнить команду для инициализации проекта
+
+            console.log(`Стандартный вывод: ${stdout}`);
+            console.error(`Ошибка вывода: ${stderr}`);
+        });
+
     const gitSpinner = ora("Downloading files...").start();
     // clone the repo into the project folder -> creates the new boilerplate
     await exec(`git clone --depth 1 ${git_repo} ${projectPath} --quiet`);
