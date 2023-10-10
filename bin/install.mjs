@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { promisify } from "util";
 import cp from "child_process";
-const inquirer = require('inquirer');
+import inquirer from "inquirer";
 import path from "path";
 import fs, { existsSync, mkdirSync } from "fs";
 // cli spinners
