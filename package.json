@@ -1,7 +1,7 @@
 {
-  "name": "someXplugin",
+  "name": "somexxxplugin",
   "version": "1.0.0",
-  "description": "someXplugin",
+  "description": "somexxxplugin",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -29,6 +29,6 @@
     "package.json"
   ],
   "bin": {
-    "someXplugin": "bin/install.mjs"
+    "somexxxplugin": "bin/install.mjs"
   }
 }
