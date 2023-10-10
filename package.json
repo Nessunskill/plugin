@@ -1,7 +1,7 @@
 {
-  "name": "@brizy/contentful",
+  "name": "someXplugin",
   "version": "1.0.0",
-  "description": "Contentful plugin",
+  "description": "someXplugin",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -27,5 +27,8 @@
   "files": [
     "dist",
     "package.json"
-  ]
+  ],
+  "bin": {
+    "someXplugin": "bin/install.mjs"
+  }
 }
