@@ -34,7 +34,7 @@ else {
 }
 
 try {
-    inquirer
+    await inquirer
         .prompt([
             {
                 type: 'list',
