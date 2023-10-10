@@ -1,7 +1,7 @@
 {
-  "name": "somexxxplugin",
+  "name": "brizy-plugin",
   "version": "1.0.0",
-  "description": "somexxxplugin",
+  "description": "brizy-plugin",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -29,6 +29,9 @@
     "package.json"
   ],
   "bin": {
-    "somexxxplugin": "bin/install.mjs"
+    "brizy-plugin": "bin/install.mjs"
+  },
+  "dependencies": {
+    "ora": "^7.0.1"
   }
 }
