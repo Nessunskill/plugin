@@ -11,9 +11,9 @@ const exec = promisify(cp.exec);
 const rm = promisify(fs.rm);
 
 if (process.argv.length < 3) {
-    console.log("You have to provide a name to your app.");
+    console.log("You have to provide a name to your plugin.");
     console.log("For example :");
-    console.log("    npx simple-ts-app my-app");
+    console.log("    npx @brizy/plugin my-plugin");
     process.exit(1);
 }
 
@@ -38,7 +38,6 @@ try {
     await exec(`git clone --depth 1 ${git_repo} ${projectPath} --quiet`);
     gitSpinner.succeed();
 
-    const cleanSpinner = ora("Removing useless files").start();
     // remove my git history
     const rmGit = rm(path.join(projectPath, ".git"), { recursive: true, force: true });
     // remove the installation file
@@ -48,15 +47,13 @@ try {
     process.chdir(projectPath);
     // remove the packages needed for cli
     await exec("npm uninstall ora cli-spinners");
-    cleanSpinner.succeed();
 
     const npmSpinner = ora("Installing dependencies...").start();
     await exec("npm install");
     npmSpinner.succeed();
 
     console.log("The installation is done!");
-    console.log("You can now run your app with:");
-    console.log(`    cd ${projectName}`);
+    console.log("You can now run your plugin with:");
     console.log(`    npm run dev`);
 
 } catch (error) {
